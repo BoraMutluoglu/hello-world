@@ -7,6 +7,7 @@
 #define _DICTIONARY_H_INCLUDE_
 
 
+
 // Dictionary
 // Exported reference type
 typedef struct DictionaryObj* Dictionary;
@@ -17,7 +18,13 @@ Dictionary newDictionary(void);
 
 // freeDictionary()
 // destructor for the Dictionary type
-void freeDictionary(Dictionary* pD);
+//void freeDictionary(Dictionary* pD);
+
+void freeDictionary(Dictionary pD);
+
+// freeNode()
+// destructs entire NodeObj linked list
+//int freeNode(struct NodeObj* pN);
 
 // isEmpty()
 // returns 1 (true) if S is empty, 0 (false) otherwise
@@ -54,5 +61,9 @@ void makeEmpty(Dictionary D);
 // pre: none
 // prints a text representation of D to the file pointed to by out
 void printDictionary(FILE* out, Dictionary D);
+
+
+struct NodeObj* find(Dictionary D, char* k);
+
 
 #endif
